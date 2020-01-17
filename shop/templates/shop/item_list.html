@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop: item_list</title>
+</head>
+<body>
+<form action="" method="GET">
+    <input type="text" name="q" value="{{ q }}"/>
+    <input type="submit" value="검색"/>
+</form>
+<hr/>
+<ul>
+    {% for item in item_list %}
+        <li>
+            <h3>{{ item.name }}</h3>
+            <h4>{{ item.price }}</h4>
+            {% if item.desc %}
+                <p>{{ item.desc }}</p>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
