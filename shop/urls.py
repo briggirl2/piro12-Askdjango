@@ -1,7 +1,11 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, register_converter
+
+from shop import views
+from shop.converters import FourDigitYearConverter
+
+register_converter(FourDigitYearConverter, 'yyyy')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls'))
+    path('archives/<yyyy:year>/', views.archives_year)
 ]
