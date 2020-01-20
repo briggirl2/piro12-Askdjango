@@ -6,6 +6,7 @@
 
 .vscode/
 db.sqlite3
+/static
 Pipfile
 Pipfile.lock
 
