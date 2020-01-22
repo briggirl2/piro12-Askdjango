@@ -17,7 +17,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from askcompany import settings
+from askcompany.settings import common
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,9 +25,9 @@ urlpatterns = [
     path('shop/', include('shop.urls')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)
 
-if settings.DEBUG:
+if common.DEBUG:
     import debug_toolbar
 
     urlpatterns += [
